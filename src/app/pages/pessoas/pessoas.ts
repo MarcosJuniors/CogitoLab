@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { TEAM_MEMBERS } from './pessoas.data';
 
 @Component({
-  imports: [],
   selector: 'app-pessoas',
-  styleUrl: './pessoas.css',
+  imports: [],
   templateUrl: './pessoas.html',
+  styleUrl: './pessoas.css',
 })
-export class Pessoas {}
+export class Pessoas {
+  teamMembers = TEAM_MEMBERS;
+}

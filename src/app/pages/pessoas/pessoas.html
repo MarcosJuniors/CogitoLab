@@ -1,1 +1,40 @@
-<p>pessoas works!</p>
+<section class="people-section" aria-labelledby="people-title">
+  <div class="people-container">
+
+    <header class="people-header">
+      <p class="eyebrow">COGITO LAB</p>
+
+      <h1 id="people-title">
+        Pessoas
+      </h1>
+
+      <p>
+        Conheça os pesquisadores e estudantes que fazem parte do laboratório.
+      </p>
+    </header>
+
+    <div class="people-grid">
+
+      @for (member of teamMembers; track member.name) {
+        <article class="person-card">
+
+          <div class="person-photo-wrapper">
+            <img
+              class="person-photo"
+              [src]="member.photo"
+              [alt]="'Foto de ' + member.name"
+            >
+          </div>
+
+          <div class="person-info">
+            <h2>{{ member.name }}</h2>
+            <p>{{ member.role }}</p>
+          </div>
+
+        </article>
+      }
+
+    </div>
+
+  </div>
+</section>
