@@ -1,0 +1,187 @@
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header-container {
+  max-width: 1200px;
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #0f172a;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-image {
+  width: 32px;
+  height: 32px;
+
+  display: block;
+  object-fit: contain;
+}
+
+.logo-name {
+  color: #0f172a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Navegação */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.desktop-nav a {
+  color: #334155;
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.desktop-nav a:hover {
+  color: #1e40af;
+}
+
+/* Idioma */
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-selector button,
+.mobile-languages button {
+  border: 0;
+  background: transparent;
+
+  color: #64748b;
+  cursor: pointer;
+
+  font: inherit;
+  padding: 4px;
+}
+
+.language-selector .language-active,
+.mobile-languages .language-active {
+  color: #1e40af;
+  font-weight: 700;
+}
+
+/* Botão mobile */
+
+.menu-button {
+  display: none;
+
+  margin-left: auto;
+
+  border: 0;
+  background: transparent;
+
+  color: #0f172a;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  padding: 8px;
+}
+
+/* Menu mobile */
+
+.mobile-menu {
+  display: none;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    gap: 16px;
+  }
+
+  .desktop-nav a {
+    font-size: 0.9rem;
+  }
+
+  .header-container {
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .header-container {
+    min-height: 64px;
+    padding: 0 20px;
+  }
+
+  .logo-image {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo-name {
+    font-size: 1.1rem;
+  }
+
+  .desktop-nav,
+  .language-selector {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .mobile-menu {
+    padding: 16px 20px 24px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .mobile-menu a {
+    display: block;
+
+    padding: 12px 0;
+
+    color: #334155;
+    text-decoration: none;
+
+    font-size: 1rem;
+  }
+
+  .mobile-menu a:hover {
+    color: #1e40af;
+  }
+
+  .mobile-languages {
+    display: flex;
+    gap: 16px;
+
+    padding-top: 16px;
+    margin-top: 8px;
+
+    border-top: 1px solid #e2e8f0;
+  }
+}
