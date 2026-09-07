@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-cabecalho',
-  styleUrl: './cabecalho.css',
+  imports: [],
   templateUrl: './cabecalho.html',
+  styleUrl: './cabecalho.css',
 })
-export class Cabecalho {}
+export class Cabecalho {
+  menuAberto = signal(false);
+
+  alternarMenu(): void {
+    this.menuAberto.update(aberto => !aberto);
+  }
+}

@@ -4,7 +4,7 @@
     <a class="logo" href="/">
       <img
         class="logo-image"
-        src="/images/logo/cogito-brain.svg"
+        src="/images/logo/logo.svg"
         alt=""
         aria-hidden="true"
       >
@@ -30,30 +30,33 @@
     <button
       type="button"
       class="menu-button"
-      aria-label="Abrir menu"
-      aria-expanded="false"
+      [attr.aria-label]="menuAberto() ? 'Fechar menu' : 'Abrir menu'"
+      [attr.aria-expanded]="menuAberto()"
       aria-controls="mobile-menu"
+      (click)="alternarMenu()"
     >
       <span aria-hidden="true">☰</span>
     </button>
 
   </div>
 
-  <nav
-    id="mobile-menu"
-    class="mobile-menu"
-    aria-label="Navegação mobile"
-  >
-    <a href="/">Início</a>
-    <a href="/pesquisa">Pesquisa</a>
-    <a href="/projetos">Projetos</a>
-    <a href="/pessoas">Pessoas</a>
-    <a href="/publicacoes">Publicações</a>
-    <a href="/participar">Participar</a>
+  @if (menuAberto()) {
+    <nav
+      id="mobile-menu"
+      class="mobile-menu"
+      aria-label="Navegação mobile"
+    >
+      <a href="/">Início</a>
+      <a href="/pesquisa">Pesquisa</a>
+      <a href="/projetos">Projetos</a>
+      <a href="/pessoas">Pessoas</a>
+      <a href="/publicacoes">Publicações</a>
+      <a href="/participar">Participar</a>
 
-    <div class="mobile-languages">
-      <button type="button" class="language-active">PT-BR</button>
-      <button type="button">EN</button>
-    </div>
-  </nav>
+      <div class="mobile-languages">
+        <button type="button" class="language-active">PT-BR</button>
+        <button type="button">EN</button>
+      </div>
+    </nav>
+  }
 </header>
