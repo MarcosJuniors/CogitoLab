@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { RESEARCH_AREAS } from './pesquisa.data';
 
 @Component({
-  imports: [],
   selector: 'app-pesquisa',
-  styleUrl: './pesquisa.css',
+  imports: [],
   templateUrl: './pesquisa.html',
+  styleUrl: './pesquisa.css',
 })
-export class Pesquisa {}
+export class Pesquisa {
+  researchAreas = RESEARCH_AREAS;
+}

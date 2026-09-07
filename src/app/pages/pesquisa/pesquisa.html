@@ -1,1 +1,26 @@
-<p>pesquisa works!</p>
+<section class="research-section" aria-labelledby="research-title">
+  <div class="research-container">
+
+    <header class="research-header">
+      <p class="eyebrow">COGITO LAB</p>
+
+      <h1 id="research-title">
+        Áreas de Pesquisa
+      </h1>
+
+      <p>
+        Conheça as principais linhas de pesquisa desenvolvidas pelo Cogito Lab.
+      </p>
+    </header>
+
+    <div class="research-grid">
+      @for (area of researchAreas; track area.title) {
+        <article class="research-card">
+          <h2>{{ area.title }}</h2>
+          <p>{{ area.description }}</p>
+        </article>
+      }
+    </div>
+
+  </div>
+</section>
