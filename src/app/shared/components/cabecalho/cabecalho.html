@@ -1,4 +1,5 @@
 <header class="site-header">
+
   <div class="header-container">
 
     <a class="logo" href="/">
@@ -12,25 +13,78 @@
       <span class="logo-name">Cogito Lab</span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Navegação principal">
-      <a href="/">Início</a>
-      <a href="/pesquisa">Pesquisa</a>
-      <a href="/projetos">Projetos</a>
-      <a href="/pessoas">Pessoas</a>
-      <a href="/publicacoes">Publicações</a>
-      <a href="/participar">Participar</a>
+    <nav
+      class="desktop-nav"
+      [attr.aria-label]="
+        idiomaAtual() === 'pt'
+          ? 'Navegação principal'
+          : 'Main navigation'
+      "
+    >
+
+      <a href="/">
+        {{ idiomaAtual() === 'pt' ? 'Início' : 'Home' }}
+      </a>
+
+      <a href="/pesquisa">
+        {{ idiomaAtual() === 'pt' ? 'Pesquisa' : 'Research' }}
+      </a>
+
+      <a href="/projetos">
+        {{ idiomaAtual() === 'pt' ? 'Projetos' : 'Projects' }}
+      </a>
+
+      <a href="/pessoas">
+        {{ idiomaAtual() === 'pt' ? 'Pessoas' : 'People' }}
+      </a>
+
+      <a href="/publicacoes">
+        {{ idiomaAtual() === 'pt' ? 'Publicações' : 'Publications' }}
+      </a>
+
+      <a href="/participar">
+        {{ idiomaAtual() === 'pt' ? 'Participar' : 'Join' }}
+      </a>
+
     </nav>
 
-    <div class="language-selector" aria-label="Seleção de idioma">
-      <button type="button" class="language-active">PT-BR</button>
+    <div
+      class="language-selector"
+      [attr.aria-label]="
+        idiomaAtual() === 'pt'
+          ? 'Seleção de idioma'
+          : 'Language selection'
+      "
+    >
+
+      <button
+        type="button"
+        [class.language-active]="idiomaAtual() === 'pt'"
+        (click)="idiomaAtual() !== 'pt' && alternarIdioma()"
+      >
+        PT-BR
+      </button>
+
       <span aria-hidden="true">|</span>
-      <button type="button">EN</button>
+
+      <button
+        type="button"
+        [class.language-active]="idiomaAtual() === 'en'"
+        (click)="idiomaAtual() !== 'en' && alternarIdioma()"
+      >
+        EN
+      </button>
+
     </div>
 
     <button
       type="button"
       class="menu-button"
-      [attr.aria-label]="menuAberto() ? 'Fechar menu' : 'Abrir menu'"
+      [attr.aria-label]="
+        menuAberto()
+          ? (idiomaAtual() === 'pt' ? 'Fechar menu' : 'Close menu')
+          : (idiomaAtual() === 'pt' ? 'Abrir menu' : 'Open menu')
+      "
       [attr.aria-expanded]="menuAberto()"
       aria-controls="mobile-menu"
       (click)="alternarMenu()"
@@ -41,22 +95,63 @@
   </div>
 
   @if (menuAberto()) {
+
     <nav
       id="mobile-menu"
       class="mobile-menu"
-      aria-label="Navegação mobile"
+      [attr.aria-label]="
+        idiomaAtual() === 'pt'
+          ? 'Navegação mobile'
+          : 'Mobile navigation'
+      "
     >
-      <a href="/">Início</a>
-      <a href="/pesquisa">Pesquisa</a>
-      <a href="/projetos">Projetos</a>
-      <a href="/pessoas">Pessoas</a>
-      <a href="/publicacoes">Publicações</a>
-      <a href="/participar">Participar</a>
+
+      <a href="/">
+        {{ idiomaAtual() === 'pt' ? 'Início' : 'Home' }}
+      </a>
+
+      <a href="/pesquisa">
+        {{ idiomaAtual() === 'pt' ? 'Pesquisa' : 'Research' }}
+      </a>
+
+      <a href="/projetos">
+        {{ idiomaAtual() === 'pt' ? 'Projetos' : 'Projects' }}
+      </a>
+
+      <a href="/pessoas">
+        {{ idiomaAtual() === 'pt' ? 'Pessoas' : 'People' }}
+      </a>
+
+      <a href="/publicacoes">
+        {{ idiomaAtual() === 'pt' ? 'Publicações' : 'Publications' }}
+      </a>
+
+      <a href="/participar">
+        {{ idiomaAtual() === 'pt' ? 'Participar' : 'Join' }}
+      </a>
 
       <div class="mobile-languages">
-        <button type="button" class="language-active">PT-BR</button>
-        <button type="button">EN</button>
+
+        <button
+          type="button"
+          [class.language-active]="idiomaAtual() === 'pt'"
+          (click)="idiomaAtual() !== 'pt' && alternarIdioma()"
+        >
+          PT-BR
+        </button>
+
+        <button
+          type="button"
+          [class.language-active]="idiomaAtual() === 'en'"
+          (click)="idiomaAtual() !== 'en' && alternarIdioma()"
+        >
+          EN
+        </button>
+
       </div>
+
     </nav>
+
   }
+
 </header>

@@ -1,34 +1,47 @@
 <section class="hero" aria-labelledby="hero-title">
+
   <div class="hero-container">
 
-    <!-- Imagem em primeiro para empilhar no topo no mobile -->
-    <div class="hero-visual">
-      <img
-        class="hero-image"
-        [src]="heroPesquisaLaboratorioUrl"
-        alt="Pesquisadores trabalhando juntos"
-      />
-    </div>
-
     <div class="hero-content">
+
       <p class="hero-eyebrow">
-        PESQUISA • CIÊNCIA • INOVAÇÃO
+        {{ idiomaAtual() === 'pt'
+          ? 'PESQUISA • CIÊNCIA • INOVAÇÃO'
+          : 'RESEARCH • SCIENCE • INNOVATION' }}
       </p>
 
       <h1 id="hero-title">
-        Pesquisa, ciência e inovação para transformar conhecimento.
+        {{ idiomaAtual() === 'pt'
+          ? 'Pesquisa, ciência e inovação para transformar conhecimento.'
+          : 'Research, science and innovation to transform knowledge.' }}
       </h1>
 
       <p class="hero-description">
-        O Cogito Lab desenvolve pesquisas em engenharia de software,
-        inteligência artificial e tecnologias emergentes, conectando
-        conhecimento científico, inovação e impacto.
+        {{ idiomaAtual() === 'pt'
+          ? 'O Cogito Lab desenvolve pesquisas em engenharia de software, inteligência artificial e tecnologias emergentes, conectando conhecimento científico, inovação e impacto.'
+          : 'Cogito Lab conducts research in software engineering, artificial intelligence and emerging technologies, connecting scientific knowledge, innovation and impact.' }}
       </p>
 
       <a class="hero-button" href="/pesquisa">
-        Conheça nossas pesquisas
+        {{ idiomaAtual() === 'pt'
+          ? 'Conheça nossas pesquisas'
+          : 'Explore our research' }}
       </a>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <img
+        class="hero-image"
+        [src]="heroPesquisaLaboratorioUrl"
+        [alt]="idiomaAtual() === 'pt'
+          ? 'Pesquisadores trabalhando juntos em um ambiente acadêmico'
+          : 'Researchers working together in an academic environment'"
+      />
+
     </div>
 
   </div>
+
 </section>

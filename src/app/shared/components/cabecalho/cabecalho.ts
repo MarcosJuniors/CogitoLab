@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { Idioma } from '../../../core/services/idioma.service';
 
 @Component({
   selector: 'app-cabecalho',
@@ -9,7 +10,15 @@ import { Component, signal } from '@angular/core';
 export class Cabecalho {
   menuAberto = signal(false);
 
+  private idiomaService = inject(Idioma);
+
+  idiomaAtual = this.idiomaService.idiomaAtual;
+
+  alternarIdioma(): void {
+    this.idiomaService.alternarIdioma();
+  }
+
   alternarMenu(): void {
-    this.menuAberto.update(aberto => !aberto);
+    this.menuAberto.update((aberto) => !aberto);
   }
 }
