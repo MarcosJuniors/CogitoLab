@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-destaque',
-  styleUrl: './destaque.css',
+  imports: [],
   templateUrl: './destaque.html',
+  styleUrl: './destaque.css',
 })
-export class Destaque {}
+export class Destaque {
+  public heroPesquisaLaboratorioUrl =
+    '/images/hero-pesquisa-laboratorio.jpg';
+}
