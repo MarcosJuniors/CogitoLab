@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-rodape',
-  styleUrl: './rodape.css',
+  imports: [],
   templateUrl: './rodape.html',
+  styleUrl: './rodape.css',
 })
 export class Rodape {}
