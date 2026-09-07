@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { PROJECTS } from './projetos.data';
 
 @Component({
-  imports: [],
   selector: 'app-projetos',
-  styleUrl: './projetos.css',
+  imports: [],
   templateUrl: './projetos.html',
+  styleUrl: './projetos.css',
 })
-export class Projetos {}
+export class Projetos {
+  projects = PROJECTS;
+}
