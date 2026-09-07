@@ -7,6 +7,7 @@ import { Destaque } from './pages/inicio/destaque/destaque';
 import { Pesquisa } from './pages/pesquisa/pesquisa';
 import { Projetos } from './pages/projetos/projetos';
 import { Pessoas } from './pages/pessoas/pessoas';
+import { IdiomaServiceTs } from './app/core/idioma.service.ts/idioma.service.ts';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ import { Pessoas } from './pages/pessoas/pessoas';
     Pesquisa,
     Projetos,
     Pessoas,
-    Rodape
+    Rodape, IdiomaServiceTs
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
